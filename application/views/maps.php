@@ -108,7 +108,7 @@
                     position: new google.maps.LatLng(points[i][1], points[i][2]),
                     icon: "<?=base_url()?>assets/images/marker/marker.png",
                     map: map,
-                    visible: false,
+                    visible: true,
                     zIndex: 10
                 });
                 markers.push(marker);
@@ -122,22 +122,22 @@
                 })(marker, i));
             }
 
-            google.maps.event.addListener(map, 'zoom_changed', function() {
-                var zoom = map.getZoom();
-                // iterate over markers and call setVisible
-                for (i = 0; i < points.length; i++) {
-                    if(zoom >= 16){
-                        markers[i].setVisible(true);
-                    }
-                    if(zoom < 16){
-                        markers[i].setVisible(false);
-                    }
-                }
-            });
+            // google.maps.event.addListener(map, 'zoom_changed', function() {
+            //     var zoom = map.getZoom();
+            //     // iterate over markers and call setVisible
+            //     for (i = 0; i < points.length; i++) {
+            //         if(zoom >= 16){
+            //             markers[i].setVisible(true);
+            //         }
+            //         if(zoom < 16){
+            //             markers[i].setVisible(false);
+            //         }
+            //     }
+            // });
         }
 
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=myMap"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBk7maZZbWS4I3odR82HiAUoJDuGbzi-iw&callback=myMap"></script>
 
     <?php $this->load->view('partial/footer');?>
     
